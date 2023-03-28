@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>io.gitee.tcj-hua</groupId>
+    <artifactId>didididi-api-sdk</artifactId>
+    <version>1.1-SNAPSHOT</version>
+<!--    <name>didididi-api-sdk</name>-->
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <projectUrl>https://gitee.com/tcj-hua/apiplatform-sdk.git</projectUrl>
+        <serverId>ossrh</serverId>
+    </properties>
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>cn.hutool</groupId>-->
+<!--            <artifactId>hutool-all</artifactId>-->
+<!--            <version>5.8.12</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>cn.chong</groupId>
+            <artifactId>aiplatform-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!-- nexus因为漏洞问题所以会一直提示警告, 目前警告也未给出解决方案-->
+<!--        <dependency>-->
+<!--            <groupId>org.sonatype.plugins</groupId>-->
+<!--            <artifactId>nexus-staging-maven-plugin</artifactId>-->
+<!--            <version>1.6.13</version>-->
+<!--        </dependency>-->
+    </dependencies>
+<!--    <developers>-->
+<!--        <developer>-->
+<!--            <name>tangchongjie</name>-->
+<!--            <email>1514176166@qq.com</email>-->
+<!--            <url>${projectUrl}</url>-->
+<!--            <roles>-->
+<!--                <role>tangchongjie</role>-->
+<!--            </roles>-->
+<!--            <timezone>+8</timezone>-->
+<!--        </developer>-->
+<!--    </developers>-->
+
+    <!--以下部分内容不需要修改，直接复制咱贴即可-->
+<!--    <url>${projectUrl}</url>-->
+<!--    <licenses>-->
+<!--        <license>-->
+<!--            <name>The Apache Software License, Version 2.0</name>-->
+<!--            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>-->
+<!--            <distribution>repo,manual</distribution>-->
+<!--        </license>-->
+<!--    </licenses>-->
+<!--    <scm>-->
+<!--        &lt;!&ndash; 采用projectUrl变量代替这个值，方便给重复利用这个配置，也就是上面的标签替换一下值就行 &ndash;&gt;-->
+<!--        <connection>${projectUrl}</connection>-->
+<!--        <developerConnection>${projectUrl}</developerConnection>-->
+<!--        <url>${projectUrl}</url>-->
+<!--    </scm>-->
+<!--    <distributionManagement>-->
+<!--        <snapshotRepository>-->
+<!--            &lt;!&ndash;这个id和settings.xml中servers.server.id要相同，因为上传jar需要登录才有权限&ndash;&gt;-->
+<!--            <id>${serverId}</id>-->
+<!--            <name>OSS Snapshots Repository</name>-->
+<!--            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>-->
+<!--        </snapshotRepository>-->
+<!--        <repository>-->
+<!--            &lt;!&ndash;这个id和settings.xml中servers.server.id要相同，因为上传jar需要登录才有权限&ndash;&gt;-->
+<!--            <id>${serverId}</id>-->
+<!--            <name>OSS Staging Repository</name>-->
+<!--            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
+
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>release</id>-->
+<!--            <build>-->
+<!--                <plugins>-->
+<!--                    &lt;!&ndash; 编译插件，设置源码以及编译的jdk版本 &ndash;&gt;-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                        <configuration>-->
+<!--                            <source>8</source>-->
+<!--                            <target>8</target>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
+<!--                    &lt;!&ndash;打包源码的插件&ndash;&gt;-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-source-plugin</artifactId>-->
+<!--                        <version>2.2.1</version>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <id>attach-sources</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>jar-no-fork</goal>-->
+<!--                                </goals>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+<!--                    </plugin>-->
+<!--                    &lt;!&ndash; Javadoc 文档生成插件&ndash;&gt;-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                        <version>2.9.1</version>-->
+<!--                        <configuration>-->
+<!--                            &lt;!&ndash; 忽略生成文档中的错误 &ndash;&gt;-->
+<!--                            <additionalparam>-Xdoclint:none</additionalparam>-->
+<!--                            <aggregate>true</aggregate>-->
+<!--                            <charset>UTF-8</charset>&lt;!&ndash; utf-8读取文件 &ndash;&gt;-->
+<!--                            <encoding>UTF-8</encoding>&lt;!&ndash; utf-8进行编码代码 &ndash;&gt;-->
+<!--                            <docencoding>UTF-8</docencoding>&lt;!&ndash; utf-8进行编码文档 &ndash;&gt;-->
+<!--                        </configuration>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <id>attach-javadocs</id>-->
+<!--                                <goals>-->
+<!--                                    <goal>jar</goal>-->
+<!--                                </goals>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+<!--                    </plugin>-->
+<!--                    &lt;!&ndash;公钥私钥插件，也就是上传需要进行验证用户名和密码过程中需要用到的插件&ndash;&gt;-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.apache.maven.plugins</groupId>-->
+<!--                        <artifactId>maven-gpg-plugin</artifactId>-->
+<!--                        <version>1.5</version>-->
+<!--                        <executions>-->
+<!--                            <execution>-->
+<!--                                <id>sign-artifacts</id>-->
+<!--                                <phase>verify</phase>-->
+<!--                                <goals>-->
+<!--                                    <goal>sign</goal>-->
+<!--                                </goals>-->
+<!--                            </execution>-->
+<!--                        </executions>-->
+<!--                    </plugin>-->
+<!--                    &lt;!&ndash;部署插件&ndash;&gt;-->
+<!--                    <plugin>-->
+<!--                        <groupId>org.sonatype.plugins</groupId>-->
+<!--                        <artifactId>nexus-staging-maven-plugin</artifactId>-->
+<!--                        <version>1.6.7</version>-->
+<!--                        <extensions>false</extensions>-->
+<!--                        <configuration>-->
+<!--                            <serverId>${serverId}</serverId>-->
+<!--                            <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>-->
+<!--                            <autoReleaseAfterClose>true</autoReleaseAfterClose>-->
+<!--                        </configuration>-->
+<!--                    </plugin>-->
+<!--                </plugins>-->
+<!--            </build>-->
+<!--        </profile>-->
+<!--    </profiles>-->
+
+</project>
