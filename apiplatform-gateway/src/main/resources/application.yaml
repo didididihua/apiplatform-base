@@ -1,0 +1,32 @@
+server:
+  port: 8090
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: trace
+spring:
+  application:
+    name: apiplatform-gateway
+  cloud:
+    gateway:
+      # 流量染色，添加特殊的请求头标识
+      default-filters:
+        - AddResponseHeader=source, didididi
+      routes:
+        - id: api_route
+          uri: http://localhost:8123
+          predicates:
+            - Path=/api/**
+dubbo:
+  application:
+    name: dubbo-springboot-consumer
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    id: nacos-registry
+    address: nacos://xxx.xxx.xxx/?username=nacos&password=nacos
+    parameters.register-consumer-url: true
+
